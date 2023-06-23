@@ -24,6 +24,10 @@
                             <li class="list-group-item">{{ $elem->sale_date }}</li>
                             <li class="list-group-item">{{ $elem->type }}</li>
                         </ul>
+                        <div class="card-body">
+                            <a href="{{ route('comics.edit', $elem) }}" class="btn btn-warning my-2">Editor</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
                     </div>
                 </div>
             </div>
