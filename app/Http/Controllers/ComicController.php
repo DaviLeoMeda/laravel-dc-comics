@@ -25,7 +25,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view ('pages.comics.create');
+        return view('pages.comics.create');
     }
 
     /**
@@ -39,7 +39,7 @@ class ComicController extends Controller
         $comicDb = $request->all();
 
         $newComic = new Comic();
-        $newComic->fill();
+        $newComic->fill($comicDb);
         $newComic->save();
 
         return redirect()->route('pages.comics.index');
@@ -54,7 +54,7 @@ class ComicController extends Controller
     public function show(Comic $comic)
     {
 
-        return view ('pages.comics.show', compact('comic'));
+        return view('pages.comics.show', compact('comic'));
     }
 
     /**
@@ -65,7 +65,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        return view ('pages.comics.edit', compact('comic'));
+        return view('pages.comics.edit', compact('comic'));
     }
 
     /**
@@ -79,7 +79,7 @@ class ComicController extends Controller
     {
         $comicDb = $request->all();
 
-        $comic->update('$comicDb');
+        $comic->update($comicDb);
 
         return redirect()->route('pages.comics.index');
     }
